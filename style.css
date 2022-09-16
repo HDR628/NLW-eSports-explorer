@@ -1,0 +1,174 @@
+body {
+    box-sizing: border-box;
+    background-image: url(./assets/Fundo.jpg);
+    background-size: 100% /* WIDTH */    auto /* HEIGTH */ ;
+    background-repeat: no-repeat;
+    background-color: #121214;
+    background-position: top center;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Header */
+
+header{
+    margin-top: 32px;
+    height: calc(120px + 32px);
+}
+
+header div {
+    width: 120px;
+    margin: auto;
+    background-image: linear-gradient(
+    90deg,#9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+    border-radius: 50%;
+    display: flex;
+    padding: 4px;
+    
+    transition: transform .3s;
+}
+
+header div:hover{
+    transform: scale(1.1);
+}
+
+
+
+header img {
+    border-radius: 50%;
+    width: 100%;
+}
+
+/* Main */
+
+main{
+    max-width: 580px;
+    width: 90%;
+    display: grid;
+    gap: 24px;
+    margin: 32px auto;
+}
+
+
+main h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 38px;
+    letter-spacing: -0.47px;
+    color: #FFFFFF;
+}
+
+main p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    letter-spacing: -0.18px;
+    color: #A1A1AA;
+}
+
+
+/* Section */
+
+section {
+    padding-top: 4px;
+    background-image: linear-gradient(90deg,#9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+    border-radius: 10px;
+}
+
+section div {
+    background-color: #2A2634;
+    padding: 32px;
+    padding-top: 24px;
+    border-radius: 8px;
+}
+
+section ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Referencia o elemento primeiro para posteriormente chama-lo com hover, deixar bem especifico ao elemento/seletor que voce deseja */
+
+section ul li{
+    transition: transform .3s;
+}
+
+/* Aplicacao do hover, apos referencia-lo acima */
+section ul li:hover{
+    transform: scale(1.1);
+}
+
+/* Class */
+
+.games-list {
+    margin-top: 24px;
+    gap: 16px;
+}
+
+.games-list img {
+    border-radius: 8px;
+    width: 90px;
+    height: 120px;
+}
+
+.channel-list {
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.channel-list li img {
+    border: 1px solid #443E54;
+    border-radius: 50%;
+}
+
+.social-list {
+    gap: 16px;
+    margin-top: 24px;
+}
+
+/* Animation */
+
+header div {
+    animation: fromLeftProfile .6s 0.5s backwards;
+}
+
+@keyframes fromLeftProfile {
+    from{
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+main section{
+    animation: fromLeftCards .8s backwards;
+}
+
+/* O nht-child faz uma referencia aos elementos selecionados e dentro dos parenteses voce referencia a ordem em que ele se encontra,no caso 1 por ser o primeiro section */
+main section:nth-child(1){
+    animation-delay: .2s; /* Tambem podemos definir o delay a parte como nesse caso*/
+}
+
+main section:nth-child(2){
+    animation-delay: .4s;
+}
+
+main section:nth-child(3){
+    animation-delay: .6s;
+}
+
+
+@keyframes fromLeftCards {
+    from{
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
